@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+        - image: "ubuntu:latest"
+    steps:
+      - checkout
+      - run:
+          name: Installing SUDO
+          command: 'apt-get update'
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
